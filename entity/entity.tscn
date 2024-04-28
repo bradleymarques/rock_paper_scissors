@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccdsimgh5r8x3"]
+
+[ext_resource type="Script" path="res://entity/entity.gd" id="1_vs337"]
+[ext_resource type="Texture2D" uid="uid://dgopc4j7itqaw" path="res://sprites/question.png" id="2_laymj"]
+[ext_resource type="Script" path="res://entity/entity_sprite.gd" id="3_6mbew"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pst6c"]
+radius = 20.0
+
+[node name="Entity" type="CharacterBody2D" node_paths=PackedStringArray("entity_sprite")]
+script = ExtResource("1_vs337")
+entity_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_laymj")
+script = ExtResource("3_6mbew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pst6c")
